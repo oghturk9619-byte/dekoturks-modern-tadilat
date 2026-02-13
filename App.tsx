@@ -16,6 +16,8 @@ import About from './pages/About';
 import KVKK from './pages/KVKK';
 import Careers from './pages/Careers';
 import Certificates from './pages/Certificates';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 const Home: React.FC = () => (
   <main className="flex-grow">
@@ -59,6 +61,8 @@ const App: React.FC = () => {
         <Route path="/kvkk" element={<KVKK />} />
         <Route path="/kariyer" element={<Careers />} />
         <Route path="/sertifikalar" element={<Certificates />} />
+        <Route path="/gizlilik" element={<Privacy />} />
+        <Route path="/sartlar" element={<Terms />} />
       </Routes>
       <Footer />
       <MobileStickyBar />
