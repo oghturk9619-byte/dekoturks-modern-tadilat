@@ -73,9 +73,9 @@ const Header: React.FC = () => {
             <Phone size={18} className="text-deko-orange" />
             <span className="text-sm tracking-tighter">0506 169 90 70</span>
           </a>
-          <button className="bg-deko-orange hover:bg-orange-600 text-white px-7 py-3 rounded-lg font-extrabold text-sm uppercase tracking-wider transition-all shadow-lg shadow-orange-500/20 active:scale-95">
+          <a href="/#iletisim" className="bg-deko-orange hover:bg-orange-600 text-white px-7 py-3 rounded-lg font-extrabold text-sm uppercase tracking-wider transition-all shadow-lg shadow-orange-500/20 active:scale-95 text-center">
             Teklif Al
-          </button>
+          </a>
         </div>
 
         <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
             <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-3xl font-extrabold text-deko-navy hover:text-deko-orange uppercase">{link.name}</a>
           ))}
           <Link to="/hakkimizda" onClick={() => setIsOpen(false)} className="text-3xl font-extrabold text-deko-navy hover:text-deko-orange uppercase">Hakkımızda</Link>
-          <button className="w-full bg-deko-orange text-white py-5 rounded-xl font-bold text-xl shadow-xl shadow-orange-500/30">Ücretsiz Keşif İste</button>
+          <a href="/#iletisim" onClick={() => setIsOpen(false)} className="w-full bg-deko-orange text-white py-5 rounded-xl font-bold text-xl shadow-xl shadow-orange-500/30 text-center">Ücretsiz Keşif İste</a>
           <a href="tel:05061699070" className="flex items-center justify-center space-x-3 text-deko-navy py-5 border-2 border-deko-navy rounded-xl font-bold text-lg"><Phone size={24} /><span>Hemen Arayın</span></a>
         </div>
       </div>
