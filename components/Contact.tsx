@@ -27,15 +27,20 @@ const Contact: React.FC = () => {
                   <p className="text-slate-600 font-bold text-lg">destek@dekoturks.com</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-5">
-                <div className="bg-green-50 p-4 rounded-2xl text-green-600 shadow-sm border border-green-100">
+              <a
+                href="https://wa.me/905061699070?text=Merhaba%20DekoT%C3%BCrks%2C%20bir%20tadilat%20projemiz%20var%2C%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyoruz."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-5 group hover:bg-green-50/50 p-2 rounded-2xl transition-all"
+              >
+                <div className="bg-green-50 p-4 rounded-2xl text-green-600 shadow-sm border border-green-100 group-hover:bg-green-600 group-hover:text-white transition-colors">
                   <MessageSquare size={28} />
                 </div>
                 <div>
-                  <h5 className="font-black text-deko-navy uppercase text-sm tracking-widest mb-1">WhatsApp Hattı</h5>
+                  <h5 className="font-black text-deko-navy uppercase text-sm tracking-widest mb-1 group-hover:text-green-600 transition-colors">WhatsApp Hattı</h5>
                   <p className="text-green-600 font-black text-xl">+90 506 169 90 70</p>
                 </div>
-              </div>
+              </a>
               <div className="flex items-start space-x-5">
                 <div className="bg-deko-light p-4 rounded-2xl text-deko-navy shadow-sm">
                   <MapPin size={28} />
@@ -55,17 +60,17 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Ad Soyad</label>
-                  <input 
-                    type="text" 
-                    placeholder="Ahmet Yılmaz" 
+                  <input
+                    type="text"
+                    placeholder="Ahmet Yılmaz"
                     className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-deko-orange transition-colors font-medium"
                   />
                 </div>
                 <div>
                   <label className="block text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Telefon</label>
-                  <input 
-                    type="tel" 
-                    placeholder="05XX XXX XX XX" 
+                  <input
+                    type="tel"
+                    placeholder="05XX XXX XX XX"
                     className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-deko-orange transition-colors font-medium"
                   />
                 </div>
@@ -82,9 +87,9 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <label className="block text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Mesajınız</label>
-                <textarea 
-                  rows={3} 
-                  placeholder="Projeniz hakkında kısa bir bilgi verin..." 
+                <textarea
+                  rows={3}
+                  placeholder="Projeniz hakkında kısa bir bilgi verin..."
                   className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-deko-orange transition-colors resize-none font-medium"
                 ></textarea>
               </div>
