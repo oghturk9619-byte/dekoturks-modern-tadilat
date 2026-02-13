@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileStickyBar from './components/MobileStickyBar';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 // Pages
 import About from './pages/About';
@@ -66,6 +67,7 @@ const App: React.FC = () => {
       </Routes>
       <Footer />
       <MobileStickyBar />
+      <FloatingWhatsApp />
     </div>
   );
 };
