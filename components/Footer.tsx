@@ -23,7 +23,13 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 bg-white/5 hover:bg-deko-orange rounded-lg flex items-center justify-center transition-all group border border-white/10 hover:border-deko-orange">
+                <a
+                  key={i}
+                  href="https://instagram.com/dekoturks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/5 hover:bg-deko-orange rounded-lg flex items-center justify-center transition-all group border border-white/10 hover:border-deko-orange"
+                >
                   <Icon size={22} className="text-slate-400 group-hover:text-white" />
                 </a>
               ))}
