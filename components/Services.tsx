@@ -13,7 +13,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
     <p className="text-slate-600 leading-relaxed mb-8 relative z-10 font-medium">
       {description}
     </p>
-    <a href="#" className="flex items-center text-deko-orange font-black text-sm uppercase tracking-widest group-hover:underline underline-offset-4 relative z-10">
+    <a href="#iletisim" className="flex items-center text-deko-orange font-black text-sm uppercase tracking-widest group-hover:underline underline-offset-4 relative z-10">
       Hizmet Detayları
       <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
     </a>

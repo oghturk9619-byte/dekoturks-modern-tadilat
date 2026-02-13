@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Logo = ({ scrolled }: { scrolled: boolean }) => (
-  <div className="flex items-center space-x-2 cursor-pointer group">
+  <Link to="/" className="flex items-center space-x-2 cursor-pointer group">
     <div className="relative w-10 h-10 flex items-center justify-center">
-      {/* Logoyu temsil eden SVG ikon yapısı */}
       <svg viewBox="0 0 100 100" className="w-full h-full">
         <path d="M10 50 L35 30 L60 50 L60 80 L10 80 Z" fill={scrolled ? "#05223D" : "#fff"} />
         <path d="M30 65 L45 45" stroke="#F37321" strokeWidth="6" strokeLinecap="round" />
@@ -22,12 +22,13 @@ const Logo = ({ scrolled }: { scrolled: boolean }) => (
         YAPI & TADİLAT
       </span>
     </div>
-  </div>
+  </Link>
 );
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -36,11 +37,13 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Hizmetler', href: '#hizmetler' },
-    { name: 'Neden Biz?', href: '#neden-biz' },
-    { name: 'Süreç', href: '#surec' },
-    { name: 'İletişim', href: '#iletisim' },
+    { name: 'Hizmetler', href: '/#hizmetler' },
+    { name: 'Neden Biz?', href: '/#neden-biz' },
+    { name: 'Süreç', href: '/#surec' },
+    { name: 'İletişim', href: '/#iletisim' },
   ];
+
+  const isHomePage = location.pathname === '/';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'}`}>
@@ -49,10 +52,20 @@ const Header: React.FC = () => {
 
         <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className={`font-bold text-sm uppercase tracking-wide transition-colors ${scrolled ? 'text-deko-navy hover:text-deko-orange' : 'text-white hover:text-deko-orange'}`}>
+            <a
+              key={link.name}
+              href={link.href}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${scrolled ? 'text-deko-navy hover:text-deko-orange' : 'text-white hover:text-deko-orange'}`}
+            >
               {link.name}
             </a>
           ))}
+          <Link
+            to="/hakkimizda"
+            className={`font-bold text-sm uppercase tracking-wide transition-colors ${scrolled ? 'text-deko-navy hover:text-deko-orange' : 'text-white hover:text-deko-orange'}`}
+          >
+            Hakkımızda
+          </Link>
         </nav>
 
         <div className="hidden lg:flex items-center space-x-6">
@@ -76,10 +89,11 @@ const Header: React.FC = () => {
           <Logo scrolled={true} />
           <button onClick={() => setIsOpen(false)}><X size={35} className="text-deko-navy" /></button>
         </div>
-        <div className="p-8 flex flex-col space-y-8">
+        <div className="p-8 flex flex-col space-y-8 overflow-y-auto">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-3xl font-extrabold text-deko-navy hover:text-deko-orange uppercase">{link.name}</a>
           ))}
+          <Link to="/hakkimizda" onClick={() => setIsOpen(false)} className="text-3xl font-extrabold text-deko-navy hover:text-deko-orange uppercase">Hakkımızda</Link>
           <button className="w-full bg-deko-orange text-white py-5 rounded-xl font-bold text-xl shadow-xl shadow-orange-500/30">Ücretsiz Keşif İste</button>
           <a href="tel:05061699070" className="flex items-center justify-center space-x-3 text-deko-navy py-5 border-2 border-deko-navy rounded-xl font-bold text-lg"><Phone size={24} /><span>Hemen Arayın</span></a>
         </div>
